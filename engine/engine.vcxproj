@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{7BC204EC-4242-4E67-AAF1-88AC7BF4DB63}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>engine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\extlibs\;$(ProjectDir)include\;$(ProjectDir)..\extlibs\assimp\include;$(ProjectDir)..\extlibs\imgui\include\;$(ProjectDir)..\extlibs\DirectXTex\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>imgui.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\extlibs\imgui\x64\Debug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\extlibs\;$(ProjectDir)include\;$(ProjectDir)..\extlibs\assimp\include;$(ProjectDir)..\extlibs\imgui\include\;$(ProjectDir)..\extlibs\DirectXTex\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>imgui.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\extlibs\imgui\x64\Debug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\extlibs\;$(ProjectDir)include\;$(ProjectDir)..\extlibs\assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\extlibs\;$(ProjectDir)include\;$(ProjectDir)..\extlibs\assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\engine\directx\D3D.h" />
+    <ClInclude Include="include\engine\directx\Macro.h" />
+    <ClInclude Include="include\engine\graphics\ComputeShader.h" />
+    <ClInclude Include="include\engine\graphics\ConstantBuffer.h" />
+    <ClInclude Include="include\engine\graphics\DecalSystem.h" />
+    <ClInclude Include="include\engine\graphics\DeferredShading.h" />
+    <ClInclude Include="include\engine\graphics\DomainShader.h" />
+    <ClInclude Include="include\engine\graphics\Emmiter.h" />
+    <ClInclude Include="include\engine\graphics\FullscreenPass.h" />
+    <ClInclude Include="include\engine\graphics\GBuffer.h" />
+    <ClInclude Include="include\engine\graphics\GeometryShader.h" />
+    <ClInclude Include="include\engine\graphics\HullShader.h" />
+    <ClInclude Include="include\engine\graphics\IndexBuffer.h" />
+    <ClInclude Include="include\engine\graphics\LightSystem.h" />
+    <ClInclude Include="include\engine\graphics\Material.h" />
+    <ClInclude Include="include\engine\graphics\Mesh.h" />
+    <ClInclude Include="include\engine\graphics\MeshSystem.h" />
+    <ClInclude Include="include\engine\graphics\Particle.h" />
+    <ClInclude Include="include\engine\graphics\ParticleSystem.h" />
+    <ClInclude Include="include\engine\graphics\RingBuffer.hpp" />
+    <ClInclude Include="include\engine\graphics\ShadingGroup.h" />
+    <ClInclude Include="include\engine\graphics\Model.h" />
+    <ClInclude Include="include\engine\graphics\PipelineShaders.h" />
+    <ClInclude Include="include\engine\graphics\PixelShader.h" />
+    <ClInclude Include="include\engine\graphics\PostProcess.h" />
+    <ClInclude Include="include\engine\graphics\ShadowMapRenderer.hpp" />
+    <ClInclude Include="include\engine\graphics\StructuredBuffer.hpp" />
+    <ClInclude Include="include\engine\utils\ErrorHandler.h" />
+    <ClInclude Include="include\engine\utils\RandomGenerator.h" />
+    <ClInclude Include="include\engine\utils\ReflectionCapture.h" />
+    <ClInclude Include="include\engine\graphics\Shader.h" />
+    <ClInclude Include="include\engine\graphics\Texture.h" />
+    <ClInclude Include="include\engine\graphics\VertexBuffer.h" />
+    <ClInclude Include="include\engine\graphics\VertexShader.h" />
+    <ClInclude Include="include\engine\math\IndexTriangle.h" />
+    <ClInclude Include="include\engine\math\intersecters\RAABBIntersecter.h" />
+    <ClInclude Include="include\engine\math\intersecters\RIntersecter.h" />
+    <ClInclude Include="include\engine\math\intersecters\RTriangleIntersecter.h" />
+    <ClInclude Include="include\engine\math\RAABB.h" />
+    <ClInclude Include="include\engine\math\RCamera.h" />
+    <ClInclude Include="include\engine\math\RFrustum.h" />
+    <ClInclude Include="include\engine\math\RRay.h" />
+    <ClInclude Include="include\engine\math\RTransform.h" />
+    <ClInclude Include="include\engine\math\RTriangleOctree.h" />
+    <ClInclude Include="include\engine\utils\DDSTextureLoader11.h" />
+    <ClInclude Include="include\engine\utils\FileSystem.h" />
+    <ClInclude Include="include\engine\utils\ModelManager.h" />
+    <ClInclude Include="include\engine\utils\SolidVector.h" />
+    <ClInclude Include="include\engine\utils\TextureManager.h" />
+    <ClInclude Include="include\engine\window\Keyboard.h" />
+    <ClInclude Include="include\engine\window\KeyboardEvent.h" />
+    <ClInclude Include="include\engine\math\AABB.h" />
+    <ClInclude Include="include\engine\math\Camera.h" />
+    <ClInclude Include="include\engine\math\Frustum.h" />
+    <ClInclude Include="include\engine\math\intersecters\AABBIntersecter.h" />
+    <ClInclude Include="include\engine\math\intersecters\Intersecter.h" />
+    <ClInclude Include="include\engine\math\MeshGlobal.h" />
+    <ClInclude Include="include\engine\math\intersecters\MeshGlobalIntersecter.h" />
+    <ClInclude Include="include\engine\math\intersecters\MeshLocalIntersecter.h" />
+    <ClInclude Include="include\engine\math\intersecters\PlaneIntersecter.h" />
+    <ClInclude Include="include\engine\math\intersecters\SphereIntersecter.h" />
+    <ClInclude Include="include\engine\math\intersecters\TriangleIntersecter.h" />
+    <ClInclude Include="include\engine\math\MeshLocal.h" />
+    <ClInclude Include="include\engine\math\Plane.h" />
+    <ClInclude Include="include\engine\math\Rectangle.h" />
+    <ClInclude Include="include\engine\math\Transform.h" />
+    <ClInclude Include="include\engine\math\Triangle.h" />
+    <ClInclude Include="include\engine\math\Ray.h" />
+    <ClInclude Include="include\engine\math\Sphere.h" />
+    <ClInclude Include="include\engine\math\TriangleOctree.h" />
+    <ClInclude Include="include\engine\render\hittables\Hittable.h" />
+    <ClInclude Include="include\engine\render\hittables\HittableMaterial.h" />
+    <ClInclude Include="include\engine\render\hittables\MeshGlobalHittable.h" />
+    <ClInclude Include="include\engine\render\hittables\PlaneHittable.h" />
+    <ClInclude Include="include\engine\render\hittables\SphereHittable.h" />
+    <ClInclude Include="include\engine\render\Material.h" />
+    <ClInclude Include="include\engine\render\lights\LightSource.h" />
+    <ClInclude Include="include\engine\render\lights\PointLight.h" />
+    <ClInclude Include="include\engine\render\lights\SpotLight.h" />
+    <ClInclude Include="include\engine\render\lights\SunLight.h" />
+    <ClInclude Include="include\engine\render\RenderBlock.h" />
+    <ClInclude Include="include\engine\render\Scene.h" />
+    <ClInclude Include="include\engine\window\Mouse.h" />
+    <ClInclude Include="include\engine\window\MouseEvent.h" />
+    <ClInclude Include="include\engine\types.h" />
+    <ClInclude Include="include\engine\utils\ColorConverter.h" />
+    <ClInclude Include="include\engine\utils\ErrorLogger.h" />
+    <ClInclude Include="include\engine\utils\StringConverter.h" />
+    <ClInclude Include="include\engine\utils\Timer.h" />
+    <ClInclude Include="include\engine\window\RenderWindow.h" />
+    <ClInclude Include="include\engine\render\World.h" />
+    <ClInclude Include="include\engine\Engine.h" />
+    <ClInclude Include="include\engine\window\WindowEvent.h" />
+    <ClInclude Include="include\engine\window\WindowContainer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\engine\graphics\ComputeShader.cpp" />
+    <ClCompile Include="src\engine\graphics\DecalSystem.cpp" />
+    <ClCompile Include="src\engine\graphics\DeferredShading.cpp" />
+    <ClCompile Include="include\engine\math\RTriangle.h" />
+    <ClCompile Include="include\engine\render\hittables\TriangleHittable.h" />
+    <ClCompile Include="src\engine\directx\D3D.cpp" />
+    <ClCompile Include="src\engine\graphics\DomainShader.cpp" />
+    <ClCompile Include="src\engine\graphics\Emmiter.cpp" />
+    <ClCompile Include="src\engine\graphics\FullscreenPass.cpp" />
+    <ClCompile Include="src\engine\graphics\GeometryShader.cpp" />
+    <ClCompile Include="src\engine\graphics\HullShader.cpp" />
+    <ClCompile Include="src\engine\graphics\IndexBuffer.cpp" />
+    <ClCompile Include="src\engine\graphics\LightSystem.cpp" />
+    <ClCompile Include="src\engine\graphics\MeshSystem.cpp" />
+    <ClCompile Include="src\engine\graphics\ParticleSystem.cpp" />
+    <ClCompile Include="src\engine\graphics\PixelShader.cpp" />
+    <ClCompile Include="src\engine\graphics\PostProcess.cpp" />
+    <ClCompile Include="src\engine\graphics\Shader.cpp" />
+    <ClCompile Include="src\engine\graphics\ShadingGroup.cpp" />
+    <ClCompile Include="src\engine\graphics\ShadowMapRenderer.cpp" />
+    <ClCompile Include="src\engine\graphics\VertexShader.cpp" />
+    <ClCompile Include="src\engine\math\intersecters\RAABBIntersecter.cpp" />
+    <ClCompile Include="src\engine\math\intersecters\RTriangleIntersecter.cpp" />
+    <ClCompile Include="src\engine\math\RAABB.cpp" />
+    <ClCompile Include="src\engine\math\RCamera.cpp" />
+    <ClCompile Include="src\engine\math\RFrustum.cpp" />
+    <ClCompile Include="src\engine\math\RRay.cpp" />
+    <ClCompile Include="src\engine\math\RTransform.cpp" />
+    <ClCompile Include="src\engine\math\RTriangleOctree.cpp" />
+    <ClCompile Include="src\engine\utils\DDSTextureLoader11.cpp" />
+    <ClCompile Include="src\engine\utils\ErrorHandler.cpp" />
+    <ClCompile Include="src\engine\utils\FileSystem.cpp" />
+    <ClCompile Include="src\engine\utils\ModelManager.cpp" />
+    <ClCompile Include="src\engine\utils\RandomGenerator.cpp" />
+    <ClCompile Include="src\engine\utils\ReflectionCapture.cpp" />
+    <ClCompile Include="src\engine\utils\TextureManager.cpp" />
+    <ClCompile Include="src\engine\window\Keyboard.cpp" />
+    <ClCompile Include="src\engine\window\KeyboardEvent.cpp" />
+    <ClCompile Include="src\engine\math\AABB.cpp" />
+    <ClCompile Include="src\engine\math\Camera.cpp" />
+    <ClCompile Include="src\engine\math\Frustum.cpp" />
+    <ClCompile Include="src\engine\math\intersecters\AABBIntersecter.cpp" />
+    <ClCompile Include="src\engine\math\intersecters\MeshGlobalIntersecter.cpp" />
+    <ClCompile Include="src\engine\math\intersecters\MeshLocalIntersecter.cpp" />
+    <ClCompile Include="src\engine\math\intersecters\PlaneIntersecter.cpp" />
+    <ClCompile Include="src\engine\math\intersecters\SphereIntersecter.cpp" />
+    <ClCompile Include="src\engine\math\intersecters\TriangleIntersecter.cpp" />
+    <ClCompile Include="src\engine\math\MeshLocal.cpp" />
+    <ClCompile Include="src\engine\math\Ray.cpp" />
+    <ClCompile Include="src\engine\math\Transform.cpp" />
+    <ClCompile Include="src\engine\math\TriangleOctree.cpp" />
+    <ClCompile Include="src\engine\render\hittables\HittableMaterial.cpp" />
+    <ClCompile Include="src\engine\render\hittables\MeshGlobalHittable.cpp" />
+    <ClCompile Include="src\engine\render\hittables\PlaneHittable.cpp" />
+    <ClCompile Include="src\engine\render\hittables\TriangleHittable.cpp" />
+    <ClCompile Include="src\engine\render\hittables\SphereHittable.cpp" />
+    <ClCompile Include="src\engine\render\lights\PointLight.cpp" />
+    <ClCompile Include="src\engine\render\lights\SpotLight.cpp" />
+    <ClCompile Include="src\engine\render\lights\SunLight.cpp" />
+    <ClCompile Include="src\engine\render\RenderBlock.cpp" />
+    <ClCompile Include="src\engine\render\Scene.cpp" />
+    <ClCompile Include="src\engine\render\World.cpp" />
+    <ClCompile Include="src\engine\window\Mouse.cpp" />
+    <ClCompile Include="src\engine\window\MouseEvent.cpp" />
+    <ClCompile Include="src\engine\utils\ColorConverter.cpp" />
+    <ClCompile Include="src\engine\utils\ErrorLogger.cpp" />
+    <ClCompile Include="src\engine\utils\StringConverter.cpp" />
+    <ClCompile Include="src\engine\utils\Timer.cpp" />
+    <ClCompile Include="src\engine\window\RenderWindow.cpp" />
+    <ClCompile Include="src\engine\Engine.cpp" />
+    <ClCompile Include="src\engine\window\WindowContainer.cpp" />
+    <ClCompile Include="src\engine\window\WindowEvent.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\engine\graphics\ConstantBuffer.inl" />
+    <None Include="include\engine\graphics\RingBuffer.inl" />
+    <None Include="include\engine\graphics\ShadingGroup.inl" />
+    <None Include="include\engine\graphics\ShadowMapRenderer.inl" />
+    <None Include="include\engine\graphics\StructuredBuffer.inl" />
+    <None Include="include\engine\graphics\VertexBuffer.inl" />
+    <None Include="include\engine\math\Transform.inl" />
+    <None Include="include\engine\render\hittables\MeshGlobalHittable.inl" />
+    <None Include="include\engine\utils\SolidVector.inl" />
+    <None Include="include\engine\utils\Timer.inl" />
+    <None Include="include\engine\math\Camera.inl" />
+    <None Include="shaders\engine\algorithms\octahedron.hlsli" />
+    <None Include="shaders\engine\bdrf\cook_torrance_bdrf.hlsli" />
+    <None Include="shaders\engine\bdrf\d\trowbridge_reitz_ggx.hlsli" />
+    <None Include="shaders\engine\bdrf\f\fresnel_law.hlsli" />
+    <None Include="shaders\engine\bdrf\g\ggx_smith.hlsli" />
+    <None Include="shaders\engine\bdrf\rendering_equation.hlsli" />
+    <None Include="shaders\engine\math_constants.hlsli" />
+    <None Include="shaders\engine\postprocces\fxaa3_11.hlsli" />
+    <None Include="shaders\engine\postprocces\postprocces_vertex_pixel_s.hlsli" />
+    <None Include="shaders\engine\reflection_capture\help_fun.hlsli" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="shaders\engine\postprocces\postprocces_fxaa_pixel.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="shaders\engine\postprocces\postprocces_hdr_pixel.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="shaders\engine\postprocces\postprocces_vertex.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="shaders\engine\reflection_capture\specular_irradiance_cubemap_pixel.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="shaders\engine\reflection_capture\diffuse_irradiance_cubemap_pixel.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="shaders\engine\reflection_capture\diffuse_irradiance_cubemap_vertex.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="shaders\engine\reflection_capture\specular_irradiance_cubemap_vertex.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="shaders\engine\reflection_capture\specular_reflectance_texture2d_pixel.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="shaders\engine\reflection_capture\specular_reflectance_texture2d_vertex.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="shaders\engine\shadow_map\shadow_map_2d_vertex.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="shaders\engine\shadow_map\shadow_map_3d_geometry.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Geometry</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Geometry</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="shaders\engine\shadow_map\shadow_map_3d_vertex.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\extlibs\assimp\code\assimp.vcxproj">
+      <Project>{69ab82f9-45d5-3445-b51d-f4cf717bf5f0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\extlibs\DirectXTex\DirectXTex\DirectXTex_Desktop_2022.vcxproj">
+      <Project>{371b9fa9-4c90-4ac6-a123-aced756d6c77}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

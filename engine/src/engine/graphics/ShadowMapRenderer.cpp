@@ -1,0 +1,38 @@
+#include <engine/graphics/ShadowMapRenderer.hpp>
+
+namespace graphics
+{
+
+void ShadowMapRenderer::initialize()
+{
+	initializeShaders();
+}
+
+void ShadowMapRenderer::initializeShaders()
+{
+	std::vector<D3D11_INPUT_ELEMENT_DESC> shaderInputLayoutDesc =
+	{
+		// Data from the vertex buffer
+		{ "POSITION", 0, DXGI_FORMAT::DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_CLASSIFICATION::D3D11_INPUT_PER_VERTEX_DATA, 0 },
+		{ "TEXCOORD", 0, DXGI_FORMAT::DXGI_FORMAT_R32G32_FLOAT, 0, 12, D3D11_INPUT_CLASSIFICATION::D3D11_INPUT_PER_VERTEX_DATA, 0 },
+		{ "NORMAL", 0, DXGI_FORMAT::DXGI_FORMAT_R32G32B32_FLOAT, 0, 20, D3D11_INPUT_CLASSIFICATION::D3D11_INPUT_PER_VERTEX_DATA, 0 },
+		{ "TANGENT", 0, DXGI_FORMAT::DXGI_FORMAT_R32G32B32_FLOAT, 0, 32, D3D11_INPUT_CLASSIFICATION::D3D11_INPUT_PER_VERTEX_DATA, 0 },
+		{ "BITANGENT", 0, DXGI_FORMAT::DXGI_FORMAT_R32G32B32_FLOAT, 0, 44, D3D11_INPUT_CLASSIFICATION::D3D11_INPUT_PER_VERTEX_DATA, 0 },
+
+		// Data from the instance buffer
+		{ "INSTANCEMODELTOWORLD1N", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 1, 0, D3D11_INPUT_CLASSIFICATION::D3D11_INPUT_PER_INSTANCE_DATA, 1},
+		{ "INSTANCEMODELTOWORLD2N", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 1, 16, D3D11_INPUT_CLASSIFICATION::D3D11_INPUT_PER_INSTANCE_DATA, 1},
+		{ "INSTANCEMODELTOWORLD3N", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 1, 32, D3D11_INPUT_CLASSIFICATION::D3D11_INPUT_PER_INSTANCE_DATA, 1},
+		{ "INSTANCEMODELTOWORLD4N", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 1, 48, D3D11_INPUT_CLASSIFICATION::D3D11_INPUT_PER_INSTANCE_DATA, 1},
+		{ "INSTANCECOLOR", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 1, 64, D3D11_INPUT_CLASSIFICATION::D3D11_INPUT_PER_INSTANCE_DATA, 1}
+	};
+
+	const auto& exeFolderPathW = utils::FileSystem::exeFolderPathW();
+	
+	m_shadowmap2DpipelineShaders.vertexShader.initialize(exeFolderPathW + L"shadow_map_2d_vertex.cso", shaderInputLayoutDesc);
+	
+	m_shadowmap3DpipelineShaders.vertexShader.initialize(exeFolderPathW + L"shadow_map_3d_vertex.cso", shaderInputLayoutDesc);
+	m_shadowmap3DpipelineShaders.geometryShader.initialize(exeFolderPathW + L"shadow_map_3d_geometry.cso");
+}
+
+}

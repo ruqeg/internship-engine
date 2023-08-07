@@ -1,0 +1,477 @@
+{
+	"IBL": {
+		"diffuse_irradiance_cubemap": "diffuse_irradiance_cubemap.dds",
+		"specular_reflection_cubemap": "specular_reflection_cubemap.dds",
+		"specular_reflectance_texture2D": "specular_reflectance_texture2D.dds"
+	},
+    "background-color": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+    ],
+	"fullscreen-triangle": {
+		"cube-texture": "../resources/textures/night_street.dds"
+	},
+	"debugger": {
+		"light": {
+			"point-light": {
+				"model": "../resources/models/sphere.fbx", 
+				"radius": 0.1
+			}
+		}
+	},
+	"post-process": {
+		"ev100": -1.0,
+		"gamma": 2.2
+	},
+	"light-system" : {
+		"directional-lights": [
+			{
+				"direction": [0.0, -0.3, 0.95, 1.0],
+				"intensity": [0.0, 1.0, 1.0, 1.0],
+				"solid-angle": 0.25
+			}
+		],
+		"point-lights" : [
+			{
+				"position": [1.0, 2.0, -1.0, 1.0],
+				"intensity": [2.0, 0.0, 0.0, 1.0],
+				"radius": 1.0
+			},
+			{
+				"position": [0.0, 2.0, 1.0, 1.0],
+				"intensity": [0.0, 2.0, 0.0, 1.0],
+				"radius": 1.0
+			},
+			{
+				"position": [-1.0, 2.0, -1.0, 1.0],
+				"intensity": [0.0, 0.0, 2.0, 1.0],
+				"radius": 1.0
+			}
+		],
+		"spot-lights" : [
+			{
+				"position": [0.0, 2.0, -5.0, 1.0],
+				"intensity": [5.0, 5.0, 0.0, 1.0],
+				"radius": 20.0,
+				"direction": [0.0, 0.0, 1.0, 1.0],
+				"angle": 0.261799
+			}
+		]
+	},
+    "camera": {
+	"farZ": 1000.0,
+        "fov": 1.0471975803375244,
+        "nearZ": 0.10000000149011612,
+        "position": [
+            -1.8160,
+            1.2,
+            -2.0
+        ],
+        "rotation": [
+            -0.268,
+            0.918,
+            0.0
+        ]
+    },
+    "shading-group": {
+            "per-models-array": [
+				{
+                    "model": "../resources/models/cube.fbx",
+                    "per-meshes-array": [
+                        {
+                            "per-materials-array": [
+                                {
+                                    "instancesID": [
+                                        1, 2, 3,
+					4, 5, 6,
+					7, 8, 9
+                                    ],
+									"albedo-texture": "../resources/textures/Crystall/Crystal_COLOR.dds",
+									"roughness-texture": "../resources/textures/Crystall/Crystal_roughness.dds",
+									"normal-texture": "../resources/textures/Crystall/Crystal_NORM.dds",
+									"metallic-texture": "../resources/textures/Crystall/Crystal_metallic.dds"
+                                },
+                                {
+                                    "instancesID": [
+                                        10
+                                    ],
+									"albedo-texture": "../resources/textures/Cobblestone/Cobblestone_albedo.dds",
+									"roughness-texture": "../resources/textures/Cobblestone/Cobblestone_roughness.dds",
+									"normal-texture": "../resources/textures/Cobblestone/Cobblestone_normal.dds",
+									"metallic-texture": "../resources/textures/Cobblestone/Cobblestone_metallic.dds"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "model": "../resources/models/Samurai/Samurai.fbx",
+                    "per-meshes-array": [
+                        {
+                            "per-materials-array": [
+                                {
+                                    "instancesID": [
+                                        0
+                                    ],
+									"albedo-texture": "../resources/models/Samurai/tga/Sword_BaseColor.dds",
+									"roughness-texture": "../resources/models/Samurai/tga/Sword_Roughness.dds",
+									"normal-texture": "../resources/models/Samurai/tga/Sword_Normal.dds",
+									"metallic-texture": "../resources/models/Samurai/tga/Sword_Metallic.dds"
+                                }
+                            ]
+                        },
+                        {
+                            "per-materials-array": [
+                                {
+                                    "instancesID": [
+                                        0
+                                    ],
+									"albedo-texture": "../resources/models/Samurai/tga/Head_BaseColor.dds",
+									"roughness-texture": "../resources/models/Samurai/tga/Head_Roughness.dds",
+									"normal-texture": "../resources/models/Samurai/tga/Head_Normal.dds",
+									"metallic-texture": "../resources/models/Samurai/tga/Head_Roughness.dds"
+                                }
+                            ]
+                        },
+                        {
+                            "per-materials-array": [
+                                {
+                                    "instancesID": [
+                                        0
+                                    ],
+									"albedo-texture": "../resources/models/Samurai/tga/Eye_BaseColor.dds",
+									"roughness-texture": "../resources/models/Samurai/tga/Eye_Normal.dds",
+									"normal-texture": "../resources/models/Samurai/tga/Eye_Normal.dds",
+									"metallic-texture": "../resources/models/Samurai/tga/Eye_Normal.dds"
+                                }
+                            ]
+                        },
+                        {
+                            "per-materials-array": [
+                                {
+                                    "instancesID": [
+                                        0
+                                    ],
+									"albedo-texture": "../resources/models/Samurai/tga/Helmet_BaseColor.dds",
+									"roughness-texture": "../resources/models/Samurai/tga/Helmet_Roughness.dds",
+									"normal-texture": "../resources/models/Samurai/tga/Helmet_Normal.dds",
+									"metallic-texture": "../resources/models/Samurai/tga/Helmet_Metallic.dds"
+                                }
+                            ]
+                        },
+                        {
+                            "per-materials-array": [
+                                {
+                                    "instancesID": [
+                                        0
+                                    ],
+									"albedo-texture": "../resources/models/Samurai/tga/Torso_BaseColor.dds",
+									"roughness-texture": "../resources/models/Samurai/tga/Torso_Roughness.dds",
+									"normal-texture": "../resources/models/Samurai/tga/Torso_Normal.dds",
+									"metallic-texture": "../resources/models/Samurai/tga/Torso_Metallic.dds"
+                                }
+                            ]
+                        },
+                        {
+                            "per-materials-array": [
+                                {
+                                    "instancesID": [
+                                        0
+                                    ],
+									"albedo-texture": "../resources/models/Samurai/tga/Legs_BaseColor.dds",
+									"roughness-texture": "../resources/models/Samurai/tga/Legs_Roughness.dds",
+									"normal-texture": "../resources/models/Samurai/tga/Legs_Normal.dds",
+									"metallic-texture": "../resources/models/Samurai/tga/Legs_Metallic.dds"
+                                }
+                            ]
+                        },
+                        {
+                            "per-materials-array": [
+                                {
+                                    "instancesID": [
+                                        0
+                                    ],
+									"albedo-texture": "../resources/models/Samurai/tga/Hands_BaseColor.dds",
+									"roughness-texture": "../resources/models/Samurai/tga/Hands_Roughness.dds",
+									"normal-texture": "../resources/models/Samurai/tga/Hands_Normal.dds",
+									"metallic-texture": "../resources/models/Samurai/tga/Hands_Roughness.dds"
+                                }
+                            ]
+                        },
+                        {
+                            "per-materials-array": [
+                                {
+                                    "instancesID": [
+                                        0
+                                    ],
+									"albedo-texture": "../resources/models/Samurai/tga/Torso_BaseColor.dds",
+									"roughness-texture": "../resources/models/Samurai/tga/Torso_Roughness.dds",
+									"normal-texture": "../resources/models/Samurai/tga/Torso_Normal.dds",
+									"metallic-texture": "../resources/models/Samurai/tga/Torso_Metallic.dds"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "pixel-shader": "opaque_pixel.cso",
+            "vertex-shader": "opaque_vertex.cso"
+    },
+	"instances": [
+        {
+            "color": [
+                1.0,
+                1.0,
+                1.0,
+				1.0
+            ],
+            "position": [
+                0.0,
+                1.0,
+                0.0
+            ],
+            "rotation": [
+                1.5707963705062866,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "color": [
+                1.0,
+                1.0,
+                1.0,
+				1.0
+            ],
+            "position": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                1.5707963705062866,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "color": [
+                1.0,
+                1.0,
+                1.0,
+				1.0
+            ],
+            "position": [
+                2.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                1.5707963705062866,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "color": [
+                1.0,
+                1.0,
+                1.0,
+				1.0
+            ],
+            "position": [
+                -2.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                1.5707963705062866,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "color": [
+                1.0,
+                1.0,
+                1.0,
+				1.0
+            ],
+            "position": [
+                0.0,
+                0.0,
+                2.0
+            ],
+            "rotation": [
+                1.5707963705062866,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "color": [
+                1.0,
+                1.0,
+                1.0,
+				1.0
+            ],
+            "position": [
+                2.0,
+                0.0,
+                2.0
+            ],
+            "rotation": [
+                1.5707963705062866,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "color": [
+                1.0,
+                1.0,
+                1.0,
+				1.0
+            ],
+            "position": [
+                -2.0,
+                0.0,
+                2.0
+            ],
+            "rotation": [
+                1.5707963705062866,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "color": [
+                1.0,
+                1.0,
+                1.0,
+				1.0
+            ],
+            "position": [
+                0.0,
+                0.0,
+                -2.0
+            ],
+            "rotation": [
+                1.5707963705062866,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "color": [
+                1.0,
+                1.0,
+                1.0,
+				1.0
+            ],
+            "position": [
+                2.0,
+                0.0,
+                -2.0
+            ],
+            "rotation": [
+                1.5707963705062866,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "color": [
+                1.0,
+                1.0,
+                1.0,
+				1.0
+            ],
+            "position": [
+                -2.0,
+                0.0,
+                -2.0
+            ],
+            "rotation": [
+                1.5707963705062866,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "color": [
+                1.0,
+                1.0,
+                1.0,
+				1.0
+            ],
+            "position": [
+                -2.0,
+                2.0,
+                -2.0
+            ],
+            "rotation": [
+                1.5707963705062866,
+                0.0,
+                0.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        }
+	]
+}

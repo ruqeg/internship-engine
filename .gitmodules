@@ -1,0 +1,9 @@
+[submodule "extlibs/DirectXMath"]
+	path = extlibs/DirectXMath
+	url = https://github.com/microsoft/DirectXMath.git
+[submodule "extlibs/assimp"]
+	path = extlibs/assimp
+	url = https://github.com/assimp/assimp.git
+[submodule "extlibs/json"]
+	path = extlibs/json
+	url = https://github.com/nlohmann/json.git

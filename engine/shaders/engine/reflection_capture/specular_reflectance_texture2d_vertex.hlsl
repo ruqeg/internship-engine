@@ -1,0 +1,28 @@
+struct VS_OUTPUT
+{
+    float4 outPosition : SV_POSITION;
+    float2 outUV : UV;
+};
+
+static const float4 fullScreenOutPosition[3] =
+{
+    float4(-1.0f, -1.0f, 0.0f, 1.0f),
+	float4(-1.0f,  3.0f, 0.0f, 1.0f),
+	float4( 3.0f, -1.0f, 0.0f, 1.0f)
+};
+
+static const float2 fullScreenUV[3] =
+{
+    float2( 0.0f, 0.0f),
+	float2( 2.0f, 0.0f),
+	float2( 0.0f, 2.0f)
+};
+
+
+VS_OUTPUT main(uint vertexId : SV_VertexID)
+{
+    VS_OUTPUT output;
+    output.outUV = fullScreenUV[vertexId];
+    output.outPosition = fullScreenOutPosition[vertexId];
+    return output;
+}
